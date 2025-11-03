@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Qur'an Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="asset/logo-quran-removebg.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f3e9;
+        color: #5c3d2e;
+      }
+
+      .arabic-font {
+        font-family: "Scheherazade New", serif;
+      }
+
+      .surah-card {
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #f9f5f0 0%, #f1e8de 100%);
+        border-left: 4px solid transparent;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(92, 61, 46, 0.08);
+      }
+
+      .surah-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(92, 61, 46, 0.15);
+        border-left-color: #8b5a3c;
+        cursor: pointer;
+      }
+
+      .pagination-btn {
+        transition: all 0.2s ease;
+        border: 1px solid #d1b9a0;
+        background-color: #f1e8de;
+        color: #5c3d2e;
+      }
+
+      .pagination-btn:hover:not(.active) {
+        background-color: #e2d5c5;
+      }
+
+      .header-bg {
+        background: linear-gradient(135deg, #8b5a3c 0%, #6d4c35 100%);
+        border-radius: 16px;
+      }
+
+      .search-input:focus {
+        box-shadow: 0 0 0 3px rgba(139, 90, 60, 0.2);
+      }
+
+      .verse-number {
+        background: linear-gradient(135deg, #8b5a3c 0%, #6d4c35 100%);
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+      <!-- Header Section -->
+      <header
+        class="text-center mb-8 p-6 header-bg text-white rounded-2xl shadow-lg"
+      >
+        <div class="mb-6">
+          <h1 class="text-4xl font-bold mb-2">Al-Qur'an Digital</h1>
+          <p class="opacity-90">Baca dan dengarkan Al-Qur'an dengan nyaman</p>
+        </div>
+
+        <div class="relative max-w-xl mx-auto mb-6">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <i class="fas fa-search text-amber-200"></i>
+          </div>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Cari surat (nama, arti, atau nomor)..."
+            class="w-full py-4 pl-10 pr-4 rounded-xl border-0 focus:outline-none focus:ring-2 focus:ring-amber-200 shadow-sm text-gray-800 placeholder-gray-500 search-input"
+          />
+        </div>
+
+        <!-- Pagination Top -->
+        <div
+          id="pagination-controls"
+          class="flex justify-center gap-1 mb-4"
+        ></div>
+        <div id="pagination-info" class="text-sm opacity-80"></div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="mb-12">
+        <!-- Surah List -->
+        <div
+          id="surah-list"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        ></div>
+      </main>
+
+      <!-- Footer Pagination -->
+      <footer class="mt-12 p-4 bg-amber-50 rounded-xl shadow-inner">
+        <div class="flex flex-col items-center">
+          <div
+            id="pagination-info-bottom"
+            class="text-sm text-brown-700 mb-4"
+          ></div>
+          <div
+            id="pagination-controls-bottom"
+            class="flex justify-center gap-1"
+          ></div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

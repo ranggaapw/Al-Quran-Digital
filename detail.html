@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Surat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f3e9;
+        color: #5c3d2e;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .arabic-font {
+        font-family: "Scheherazade New", serif;
+      }
+
+      .verse-container {
+        background: linear-gradient(135deg, #f9f5f0 0%, #f1e8de 100%);
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(92, 61, 46, 0.08);
+      }
+
+      .verse-number {
+        background: linear-gradient(135deg, #8b5a3c 0%, #6d4c35 100%);
+        color: white;
+      }
+
+      audio {
+        border-radius: 12px;
+        background: #f1e8de;
+      }
+
+      audio::-webkit-media-controls-panel {
+        background: #f1e8de;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div class="container mx-auto p-4 md:p-6 max-w-4xl">
+      <a
+        href="index.html"
+        class="inline-flex items-center mb-6 px-4 py-2 bg-amber-100 text-brown-700 rounded-lg hover:bg-amber-200 transition-colors shadow-sm"
+      >
+        <i class="fas fa-arrow-left mr-2"></i> Kembali ke Daftar Surat
+      </a>
+
+      <div id="surah-detail" class="bg-amber-50 rounded-2xl shadow-md p-6 md:p-8">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 p-4 bg-white rounded-xl shadow-sm"
+        >
+          <div>
+            <h2 id="surah-title" class="text-2xl font-bold text-brown-800"></h2>
+            <p id="surah-info" class="text-brown-600 mt-1"></p>
+          </div>
+          <audio id="surah-audio" controls class="mt-4 md:mt-0 w-full md:w-64">
+            Browser Anda tidak mendukung elemen audio.
+          </audio>
+        </div>
+
+        <div id="ayat-list" class="space-y-6"></div>
+      </div>
+    </div>
+
+    <script src="detail.js"></script>
+  </body>
+</html>
